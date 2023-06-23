@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" class="default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            color: #333;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        a {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            text-decoration: none;
+            color: #384e79;
+            transition: color 0.3s;
+            -moz-transition: color 0.3s;
+            -webkit-transition: color 0.3s;
+            -o-transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #396dd4;
+        }
+
+        a:active {
+            color: #0055ff;
+        }
+
+
+        /* PC */
+        @media screen and (min-width:801px) {
+
+            .welcome {
+                position: relative;
+                margin: 30px 0 50px 0;
+                width: 850px;
+                height: 100px;
+            }
+
+            .welcome_p {
+                position: relative;
+                font-size: 2em;
+                font-weight: bold;
+                text-align: left;
+                color: #384e79;
+            }
+
+            .old_story {
+                margin: 20px 0 20px 0;
+                font-size: 1.3em;
+                font-weight: bold;
+                color: #718ec6;
+                width: 100%;
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #img00 {
+                width: 500px;
+                height: auto;
+                margin-left: 80px;
+                border: solid 5px #fff;
+                box-shadow: 3px 3px 0 #718ec6;
+            }
+
+            #img01 {
+                width: 500px;
+                height: auto;
+                margin-right: 100px;
+                border-radius: 8px;
+            }
+
+            .card {
+                width: 100%;
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(113, 142, 198, 0.5);
+                padding: 20px 0 20px 0;
+                margin: 10px 0 10px 0;
+            }
+
+            .cassette {
+                width: 200px;
+            }
+
+            .card_text {
+                width: 410px;
+                margin-left: 100px;
+            }
+
+            #info {
+                margin-top: 50px;
+            }
+
+            #feedback {
+                background: none;
+            }
+
+            p.fb {
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            span.fb {
+                margin-left: 1.5em;
+            }
+
+            span.mail {
+                margin-left: 1.5em;
+            }
+        }
+
+        /* Mobile */
+        @media screen and (max-width:800px) {
+
+            .welcome {
+                position: relative;
+                margin: 1em 0 1em 0;
+                width: 80%;
+                max-width: 360px;
+                height: auto;
+            }
+
+            .welcome_img {
+                position: absolute;
+                width: 100%;
+                height: auto;
+            }
+
+            .welcome_p {
+                position: relative;
+                font-size: 1.7em;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            .old_story {
+                margin: 0;
+                padding-left: 5%;
+                font-size: 1em;
+                width: 90%;
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: column-reverse wrap;
+                justify-content: center;
+                align-items: flex-start;
+                color: #333333;
+            }
+
+            #old_story_02 {
+                flex-flow: column wrap;
+            }
+
+            #img00 {
+                width: 300px;
+                max-width: 90%;
+                height: auto;
+            }
+
+            #img01 {
+                width: 500px;
+                max-width: 90%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+            .card {
+                width: 100%;
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                background-color: #e2e2e2;
+                padding: 1em 0 0 0;
+                color: #333333;
+                font-size: 0.8em;
+            }
+
+            .cassette {
+                width: auto;
+                max-width: 200px;
+                margin-top: 1em;
+            }
+
+            .card_text {
+                margin-top: 1em;
+                width: 85%;
+            }
+
+            #info {
+                margin-top: 1em;
+            }
+
+            #feedback {
+                background: none;
+            }
+
+            p.fb {
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            span.fb {
+                margin-left: 1.5em;
+            }
+
+            span.mail {
+                margin-left: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome">
+        <p class="welcome_p">这里是远离都市<br>名为“遗忘之谷”的地方</p>
+    </div>
+    <div class="old_story">
+        <div>
+            <p>你将移居到这片陌生的土地，</p>
+            <p>在探索中，过上属于你的慢生活。</p>
+        </div>
+        <img src="image/top01_01.jpg" id="img00">
+    </div>
+    <div class="old_story" id="old_story_02">
+        <img src="image/top_wonderful_img.jpg" id="img01">
+        <div>
+            <p>沐浴在宁静祥和的时光，</p>
+            <p>与牧场、与家人、与遗忘之谷，</p>
+            <p>携手漫步全新的人生。</p>
+        </div>
+    </div>
+    <div class="card" id="info">
+        <img class="cassette" src="image/img_download.jpg" style="border: solid 5px #fff; box-shadow: 3px 3px 0 #718ec6;">
+        <div class="card_text">
+            <p><b>牧场物语 Welcome！美丽人生</b></p>
+            <p>发售日期：2023/1/26</p>
+            <p>对应平台：
+                <a target="_blank" href="https://store.nintendo.com.hk/70010000059044">Nintendo Switch™</a><br>
+                <a target="_blank" href="https://store.playstation.com/zh-hant-hk/product/HP0177-PPSA13506_00-WONDERFULLIFE000"><span style="margin-left: 5.4em;">PlayStation®5</span></a><br>
+                <a target="_blank" href="https://www.microsoft.com/zh-hk/p/%E7%89%A7%E5%A0%B4%E7%89%A9%E8%AA%9E-welcome-%E7%BE%8E%E9%BA%97%E4%BA%BA%E7%94%9F/9plr507j55fb"><span style="margin-left: 5.4em;">Xbox Series X|S</span></a><br>
+                <a target="_blank" href="https://store.steampowered.com/app/2111170/STORY_OF_SEASONS_A_Wonderful_Life/"><span style="margin-left: 5.4em;">Steam</span></a>
+            </p>
+            <p>官方网站：
+                <a target="_blank" href="https://www.bokumono.com/series/welcome/">『牧場物語 Welcome！ワンダフルライフ』</a><br>
+                <a target="_blank" href="https://asia.sega.com/bokumono/welcome/cn/"><span style="margin-left: 5.4em;">《牧场物语 Welcome！美丽人生》官方网站</span></a>
+            </p>
+            <p>※ 仅亚洲版(港服)有简体/繁体中文，日版无中文。</p>
+        </div>
+    </div>
+    <div class="card" id="feedback">
+        <div class="cassette">
+            <img src="/images/qrcode_for_weixin.jpg" width="100%">
+        </div>
+        <div class="card_text">
+            <p>如果您发现本站存在错误，请通过以下途径向我们反馈。</p>
+            <p class="fb"><img src="/icon/weibo-fill.svg"><span class="fb">微博：<a href="https://weibo.com/mineraltown/"
+                        target="_blank">@矿石镇</a></span></p>
+            <p class="fb"><img src="/icon/wechat-fill.svg"><span class="fb">微信公众号：矿石镇</span></p>
+            <p class="fb"><img src="/icon/mail-fill.svg"><span class="mail">邮箱：friends@mineraltown.net</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

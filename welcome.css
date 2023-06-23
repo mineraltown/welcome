@@ -1,0 +1,204 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* PC */
+@media screen and (min-width:801px) {
+    .head {
+        background-color: #ffffff;
+        border-bottom: solid 3px #fff;
+        box-shadow: 0 0 8px #000;
+        background-image: url(image/valley_PCmemory.jpg);
+        background-size: cover;
+        background-position: 50% 60%;
+    }
+
+    h1 .color_wiki {
+        color: #009da1;
+        text-shadow: 2px 2px 0 #005f61;
+    }
+
+    h1 .color_mei {
+        color: #009fe8;
+        text-shadow: 2px 2px 0 #0563af;
+    }
+    h1 .color_li {
+        color: #e74893;
+        text-shadow: 2px 2px 0 #b0006e;
+    }
+    h1 .color_ren {
+        color: #71b92b;
+        text-shadow: 2px 2px 0 #216317;
+    }
+    h1 .color_sheng {
+        color: #ee7f00;
+        text-shadow: 2px 2px 0 #ad4800;
+    }
+
+
+    .logo {
+        margin-left: 10px;
+        width: auto;
+        height: 100%;
+    }
+
+    .slogan {
+        background-color: rgba(255,255,255,0.8);
+        box-shadow: 2px 2px 0 #666;
+        padding-left: 10px;
+    }
+
+    .aside {
+        background-color: #a1bbec;
+    }
+
+    .aside_sub {
+        color: #ffffff;
+        background-color: #718ec6;
+    }
+
+    .aside_link {
+        color: #384e79;
+    }
+
+    .aside_link:hover {
+        color: #2163df;
+    }
+
+    .frame {
+        background-color: #fff;
+        box-shadow: 0 0 8px #000;
+    }
+
+    .footer {
+        background-color: #333;
+        box-shadow: 0 0 8px #000;
+    }
+
+    .menu_name {
+        color: #fff;
+    }
+
+    .select_ver {
+        color: #fff;
+    }
+
+    .link {
+        border-bottom: solid 1px #aaa;
+    }
+
+    .link div {
+        color: #333;
+    }
+
+    .sub_link {
+        color: #555;
+        background-color: #ccc;
+    }
+
+    .link_flex {
+        color: #333333;
+    }
+
+    .frame {
+        width: auto;
+        height: 100%;
+        flex-grow: 1;
+        background-color: #e3edff;
+        border-left: solid 3px #fff;
+        display: flex;
+        display: -webkit-flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 8px #333333;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width:800px) {
+    .head {
+        background-color: #555;
+        box-shadow: 0 0 5px #777;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    .frame {
+        background-color: #ddd;
+    }
+
+    .footer {
+        background-color: #555;
+        box-shadow: 0 0 5px #777;
+    }
+
+    .menu_name {
+        color: white;
+    }
+
+    .link {
+        border-bottom: solid 1px #aaa;
+    }
+
+    .link div {
+        color: #333;
+    }
+
+    .sub_link {
+        color: #555;
+        background-color: #ccc;
+    }
+
+    .link_flex {
+        color: #333333;
+    }
+
+    .frame {
+        width: auto;
+        height: 100%;
+        flex-grow: 1;
+        background-color: #eee;
+        display: flex;
+        display: -webkit-flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 8px #333333;
+    }
+
+    .triangle_top {
+        display: none;
+    }
+
+    .triangle_bottom {
+        display: none;
+    }
+
+    .triangle_main {
+        width: 100%;
+        height: auto;
+        flex-grow: 1;
+    }
+}
+
+@-webkit-keyframes scrollToLeft {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -581px 0px;
+    }
+}
+
+@keyframes scrollToLeft {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -581px 0px;
+    }
+}

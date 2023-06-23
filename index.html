@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:801px)" href="/css/wiki.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:800px)" href="/css/wiki_m.css">
+    <link rel="stylesheet" type="text/css" href="welcome.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/icon/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/icon/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/icon/favicon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="矿石镇的攻略百科">
+    <meta name="application-name" content="矿石镇的攻略百科">
+    <meta name="msapplication-TileColor" content="#999999">
+    <meta name="msapplication-config" content="/icon/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>Wiki! 美丽人生</title>
+    <meta name="description" content="牧场物语 Welcome！美妙的攻略百科">
+    <meta name="keywords" content="牧场物语,遗忘之谷,牧場物語,Welcome！ワンダフルライフ,攻略,Switch">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9JX4C52TL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-T9JX4C52TL');
+    </script>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.prod.js"></script>
+</head>
+
+<body>
+    <div id="wiki" v-cloak>
+        <div class="head">
+            <div class="logo">
+                <img src="./image/logo.png">
+            </div>
+            <div class="title" style="width: auto;">
+                <h1 class="name"><span class="color_wiki">Wiki! </span>
+                    <span class="color_mei">美</span>
+                    <span class="color_li">丽</span>
+                    <span class="color_ren">人</span>
+                    <span class="color_sheng">生</span></h1>
+                <h2 class="slogan">欢迎！来到美丽人生的攻略百科！</h2>
+            </div>
+        </div>
+        <div class="main">
+            <div class="aside">
+                <div v-for="(item,index) in menu" class="aside_flex">
+                    <div class="aside_sub">{{ index }}</div>
+                    <div class="aside_title">
+                        <a class="aside_link" :href="i.href" target="home" v-for="i in item">{{ i.name }}</a>
+                    </div>
+                </div>
+                <div class="copy">
+                    <p class="copy" style="color: #384e79;"><a href="https://wiki.mineraltown.net/" class="copy"
+                            style="color: #384e79;">矿石镇的攻略百科</a> © {{ year }}</p>
+                </div>
+            </div>
+            <div class="frame">
+                <iframe :src="link == '' ? 'default.html' : link" name="home" id="home" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="footer">
+            <template v-for="(item,index) in menu_mobile">
+                <a :href="item.href" target="home" class="footer_menu">
+                    <div class="menu_logo">
+                        <img :src="'/icon/' + item.icon ">
+                    </div>
+                    <div class="menu_name">{{ index }}</div>
+                </a>
+            </template>
+        </div>
+    </div>
+</body>
+<script>
+    const App = {
+        data() {
+            return {
+                year: new Date().getFullYear(),
+                menu: {
+                        "基础知识": [
+                            {
+                                "name": "游戏开始",
+                                "href": "knowledge/start.html"
+                            },
+                            {
+                                "name": "基础知识",
+                                "href": "knowledge/basic.html"
+                            }
+                        ]
+                    },
+                menu_mobile: {
+                        "牧场": {
+                            "icon": "seedling-fill.svg",
+                            "href": "pasture.html"
+                        },
+                        "居民": {
+                            "icon": "user-2-line.svg",
+                            "href": "resident.html"
+                        },
+                        "村庄": {
+                            "icon": "home-3-line.svg",
+                            "href": "town.html"
+                        },
+                        "事件": {
+                            "icon": "calendar-line.svg",
+                            "href": "event.html"
+                        },
+                        "其他": {
+                            "icon": "more-fill.svg",
+                            "href": "other.html"
+                        }
+                    },
+                link: window.location.hash.slice(1)
+            }
+        },
+        methods: {}
+    }
+    const app = Vue.createApp(App)
+    const vm = app.mount("#wiki")
+</script>
+
+</html>
