@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <link rel="stylesheet" href="/css/iframe.css">
+    <title>游戏界面</title>
+    <style>
+        .weather {
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .weather img {
+            margin-top: 8px;
+            background-color: #f3eacd;
+            width: 50px;
+        }
+        .weather span {
+            margin-left: 1em;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .bag_flex {
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        .bag {
+            margin: 10px 10px 0 10px;
+            width: 400px;
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        .bag_L {
+            min-width: 80px;
+        }
+        .bag_R {
+            flex-grow: 1;
+        }
+        .bag_title {
+            font-weight: bold;
+            border-bottom: solid 1px #b4823c;
+            padding-bottom: 5px;
+        }
+        .bag_text {
+            font-size: 0.8em;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>游戏界面</h1>
+    <p><strong>注：本攻略中介绍的游戏操作基于 Nintendo Switch™ 版《牧场物语 Welcome！美丽人生》。<br>其他版本请以实际游戏为准。</strong></p>
+    <h2>基本界面</h2>
+    <img src="05_01.png">
+    <ol>
+        <li><b>体力</b><br>主角的体力。体力归零时主角会当场倒地，并在三个小时后醒来。</li>
+        <li><b>季节与日期</b><br>当前的季节与日期。不同季节能够种植的农作物与结出果实的果树也会发生变化。</li>
+        <li><b>时间</b><br>当前时间。</li>
+        <li><b>天气</b><br>当前天气。</li>
+            <ul>
+                <li class="weather"><img src="05_02-1.svg"><span>大晴天/晴天</span></li>
+                <li class="weather"><img src="05_02-2.svg"><span>阴天</span></li>
+                <li class="weather"><img src="05_02-3.svg"><span>雨</span></li>
+                <li class="weather"><img src="05_02-4.svg"><span>大雨</span></li>
+                <li class="weather"><img src="05_02-5.svg"><span>雪</span></li>
+            </ul>
+        <li><b>道具切换</b><br>共有五列，用方向键上下可以切换不同的道具栏。</li>
+        <li><b>迷你背包</b><br>当前所选列的道具。用方向键左右能够切换道具，按Y键可以使用道具。</li>
+        <li><b>操作指南</b><br>进行A、B、X、Y键对应的操作。</li>
+    </ol>
+    <h2>背包菜单</h2>
+    <p class="gamepad">按 <img src="/icon/switch/X.png" alt="X键">会显示背包菜单，能够进行整理道具、查看居民好感度等操作。</p>
+    <div class="bag_flex">
+        <div class="bag">
+            <div class="bag_L">
+                <img src="05_04-1.png" alt="背包">
+            </div>
+            <div class="bag_R">
+                <div class="bag_title">背包</div>
+                <div class="bag_text">查看背包中的道具。</div>
+            </div>
+        </div>
+        <div class="bag">
+            <div class="bag_L">
+                <img src="05_04-2.png" alt="跑腿列表">
+            </div>
+            <div class="bag_R">
+                <div class="bag_title">跑腿列表</div>
+                <div class="bag_text">在公告栏查看过的跑腿任务的总览。</div>
+            </div>
+        </div>
+        <div class="bag">
+            <div class="bag_L">
+                <img src="05_04-3.png" alt="牧场信息">
+            </div>
+            <div class="bag_R">
+                <div class="bag_title">牧场信息</div>
+                <div class="bag_text">能够查看主角的状态、找到的美好以及出货信息。</div>
+            </div>
+        </div>
+        <div class="bag">
+            <div class="bag_L">
+                <img src="05_04-4.png" alt="动物信息">
+            </div>
+            <div class="bag_R">
+                <div class="bag_title">动物信息</div>
+                <div class="bag_text">能够查看当前饲养的动物的信息。</div>
+            </div>
+        </div>
+        <div class="bag">
+            <div class="bag_L">
+                <img src="05_04-5.png" alt="居民信息">
+            </div>
+            <div class="bag_R">
+                <div class="bag_title">居民信息</div>
+                <div class="bag_text">能够查看各位居民的好感度。</div>
+            </div>
+        </div>
+    </div>
+    <h2>背包的操作</h2>
+    <p class="gamepad">在背包中可以查看持有道具的说明或替换道具。此外，还可以按<img src="/icon/switch/Y.png" alt="Y键">丢弃道具，按<img src="/icon/switch/Plus.png" alt="+键">整理道具。</p>
+    <h2>系统菜单</h2>
+    <p class="gamepad">在基本界面按<img src="/icon/switch/Plus.png" alt="+键">，便会打开系统菜单。</p>
+    <ul>
+        <li><b>写日记</b>：保存当前的游玩进度。</li>
+        <li><b>阅读日记</b>：读取保存的数据。</li>
+        <li><b>塔卡克拉的笔记</b>：查看关于牧场生活的说明。</li>
+        <li><b>设置</b>：更改游戏内的相关设置。</li>
+        <li><b>返回标题</b>：结束当前游戏，不保存并返回标题界面。</li>
+    </ul>
+</body>
+
+</html>

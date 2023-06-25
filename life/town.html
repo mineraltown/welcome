@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <link rel="stylesheet" href="/css/iframe.css">
+    <title>遗忘之谷</title>
+    <style>
+        .jp {
+            font-size: 0.6em;
+            margin-left: 1em;
+        }
+
+        .photo img {
+            width: 100%;
+            border-radius: 10px;
+            border: solid 5px #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .village {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        @media screen and (min-width:801px) {
+            .village {
+                flex-flow: row nowrap;
+            }
+            .resident_flex {
+                margin-left: 20px;
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: column wrap;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .resident {
+                margin: 5px;
+                width: 120px;
+                height: 120px;
+                border-radius: 5px;
+            }
+        }
+        @media screen and (max-width:800px) {
+            .village {
+                flex-flow: column nowrap;
+            }
+            .resident_flex {
+                margin-top: 10px;
+                display: flex;
+                display: -webkit-flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .resident {
+                margin: 5px;
+                width: 80px;
+                height: 80px;
+                border-radius: 40px;
+            }
+        }
+
+        .resident {
+            position: relative;
+            overflow: hidden;
+            background-color: #ddd;
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            transition: background-color 0.3s;
+            -moz-transition: background-color 0.3s;
+            -webkit-transition: background-color 0.3s;
+            -o-transition: background-color 0.3s;
+        }
+
+        .resident img {
+            width: 100%;
+        }
+
+        .normal {
+            position: absolute;
+            bottom: 0;
+            width: 160px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 3px #333;
+            font-size: 0.8em;
+            transition: background-color 0.3s, color 0.3s;
+            -moz-transition: background-color 0.3s, color 0.3s;
+            -webkit-transition: background-color 0.3s, color 0.3s;
+            -o-transition: background-color 0.3s, color 0.3s;
+        }
+
+        .resident:hover {
+            background-color: #ccc;
+        }
+
+        .resident:hover .normal {
+            background-color: rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>遗忘之谷</h1>
+    <h3>查看公告栏</h3>
+    <p>遗忘之谷的公告栏中，有时会张贴居民们的跑腿任务。准备好菜肴、食材等居民们想要的东西后，和他们对话并交付物品吧。能够获得谢礼。</p>
+    <h3>光顾店铺</h3>
+    <p>遗忘之谷中有贩卖种子的农场和能够用餐的咖啡馆等店铺存在。这些店铺只有居民在店铺里时才会营业。想要光顾这些店铺时，先在地图上查看居民是否在店铺里吧。</p>
+
+    <h2>塔卡克拉的家<span class="jp">/ タカクラの家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_takakura.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb01.png">
+                        <div class="normal">塔卡克拉</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <h2>盖瑞和妮娜的家<span class="jp">/ ガリとニーナの家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_gari.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb02.png">
+                        <div class="normal">盖瑞</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb03.png">
+                        <div class="normal">妮娜</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>贝斯塔的农场<span class="jp">/ ベスタの農場</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_besta.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb04.png">
+                        <div class="normal">贝斯塔</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb29.png">
+                        <div class="normal">瑟比妮娅</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb33.png">
+                        <div class="normal">玛修</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>小休的一家<span class="jp">/ ヒューたちの家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_suary.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb05.png">
+                        <div class="normal">史亚利</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb06.png">
+                        <div class="normal">克里斯</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb07.png">
+                        <div class="normal">小休</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>宅邸<span class="jp">/ おやしき</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_oyashiki.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb09.png">
+                        <div class="normal">罗玛娜</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb10.png">
+                        <div class="normal">塞巴斯汀</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb32.png">
+                        <div class="normal">卢米娜</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>路过瞧瞧<span class="jp">/ みてみテイ</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_mitemitei.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb11.png">
+                        <div class="normal">迪</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb12.png">
+                        <div class="normal">露</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb30.png">
+                        <div class="normal">娜美</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb35.png">
+                        <div class="normal">洛克</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>蓝鸟咖啡馆<span class="jp">/ 喫茶ブルーバード</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_bluebard.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb13.png">
+                        <div class="normal">高凡</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb31.png">
+                        <div class="normal">穆穆</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>凯特的家<span class="jp">/ ケイトたちの家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_kate.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb16.png">
+                        <div class="normal">古拉特</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb17.png">
+                        <div class="normal">桑</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb18.png">
+                        <div class="normal">凯特</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>烟花工匠的家<span class="jp">/ 花火職人の家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_fireflower.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb19.png">
+                        <div class="normal">柯萨兰</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb20.png">
+                        <div class="normal">帕萨兰</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>科学家的家<span class="jp">/ 科学者の家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_scientist.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb23.png">
+                        <div class="normal">达里尔</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>采掘现场<span class="jp">/ 発掘現場</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_excavation.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb24.png">
+                        <div class="normal">卡特</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb25.png">
+                        <div class="normal">芙洛拉</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <h2>吟游诗人的家<span class="jp">/ 吟遊詩人の家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_shijin.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb34.png">
+                        <div class="normal">古斯塔夫</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2>艺术家的家<span class="jp">/ 芸術家の家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_geijutsuka.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb36.png">
+                        <div class="normal">戈迪</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <h2>小矮人的家<span class="jp">/ コロボックルの家</span></h2>
+    <div class="village">
+        <div class="photo"><img src="village/resident_ss_colobockle.jpg"></div>
+        <div class="resident_flex">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb26.png">
+                        <div class="normal">德比特</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb27.png">
+                        <div class="normal">艾伯尼</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb28.png">
+                        <div class="normal">弗拉特</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h3>其他居民<span class="jp">/ そのほかの住人たち</span></h3>
+    <div class="village">
+        <div class="resident_flex" style="flex-flow: row wrap;">
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb08.png">
+                        <div class="normal">莫古古</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb14.png">
+                        <div class="normal">班</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb15.png">
+                        <div class="normal">蒲伊</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb21.png">
+                        <div class="normal">巴德科</div>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <div class="resident">
+                        <img src="../resident/resident_thumb/resident_thumb22.png">
+                        <div class="normal">光光</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
