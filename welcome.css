@@ -67,6 +67,7 @@
     .frame {
         background-color: #fff;
         box-shadow: 0 0 8px #000;
+        border-left: solid 3px #fff;
     }
 
     .footer {
@@ -103,8 +104,7 @@
         width: auto;
         height: 100%;
         flex-grow: 1;
-        background-color: #e3edff;
-        border-left: solid 3px #fff;
+        background-color: #fff;
         display: flex;
         display: -webkit-flex;
         flex-flow: column nowrap;
