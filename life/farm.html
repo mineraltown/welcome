@@ -7,6 +7,76 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
     <link rel="stylesheet" href="/css/iframe.css">
     <title>农活</title>
+    <style>
+        table {
+            font-size: 0.9em;
+        }
+        @media only screen and (max-width: 800px) {
+            th,
+            td {
+                height: 1.5em;
+                line-height: 1.5em;
+                padding: 3px;
+                text-align: center;
+                border: solid 1px #fff;
+            }
+
+            .mobile {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 801px) {
+            thead {
+                background-color: #666;
+                color: #fff;
+            }
+
+            th,
+            td {
+                height: 1.7em;
+                line-height: 1.7em;
+                padding: 5px 10px;
+                text-align: center;
+            }
+
+            tbody tr:nth-child(odd) {
+                background-color: #eee;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #fff;
+            }
+
+            tbody td:nth-child(odd) {
+                border: solid 1px #fff;
+            }
+
+            tbody td:nth-child(even) {
+                border: solid 1px #eee;
+            }
+        }
+
+        .spring {
+            color: #fff;
+            background-color: #aad7d2;
+        }
+        .summer {
+            color: #fff;
+            background-color: #88c283;
+        }
+        .autumn {
+            color: #fff;
+            background-color: #efbb66;
+        }
+        .winter {
+            color: #fff;
+            background-color: #a7cae6;
+        }
+        .none {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,6 +88,134 @@
         但是，如果一段时间内忘记浇水的话，农作物便会枯萎，请多加注意。<br>
         此外，所有农作物都有相应的培育季节，错过培育季节的话，未成熟的农作物便会枯萎。<br>
         收获的农作物能够用来出售换取金钱，也可以当成材料用来制作菜肴。</p>
+    <h3>购买种子</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">名称</th>
+                    <th colspan="4">季节</th>
+                    <th rowspan="2">价格</th>
+                </tr>
+                <tr>
+                    <th>郁金香</th>
+                    <th>胡椒</th>
+                    <th>琥珀</th>
+                    <th>靛蓝</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>番茄的种子</td>
+                    <td class="spring">○</td>
+                    <td class="summer">○</td>
+                    <td class="autumn">○</td>
+                    <td class="none">×</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>西瓜的种子</td>
+                    <td class="spring">○</td>
+                    <td class="summer">○</td>
+                    <td class="none">×</td>
+                    <td class="none">×</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>草莓的种子</td>
+                    <td class="spring">○</td>
+                    <td class="none">×</td>
+                    <td class="autumn">○</td>
+                    <td class="winter">○</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>蜜瓜的种子</td>
+                    <td class="none">×</td>
+                    <td class="summer">○</td>
+                    <td class="autumn">○</td>
+                    <td class="none">×</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>芜菁的种子</td>
+                    <td class="none">×</td>
+                    <td class="summer">○</td>
+                    <td class="autumn">○</td>
+                    <td class="winter">○</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>土豆的种子</td>
+                    <td class="spring">○</td>
+                    <td class="none">×</td>
+                    <td class="none">×</td>
+                    <td class="winter">○</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>胡萝卜的种子</td>
+                    <td class="none">×</td>
+                    <td class="none">×</td>
+                    <td class="autumn">○</td>
+                    <td class="winter">○</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>甘薯的种子</td>
+                    <td class="none">×</td>
+                    <td class="none">×</td>
+                    <td class="autumn">○</td>
+                    <td class="none">×</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>桃子的种子</td>
+                    <td class="spring">开花</td>
+                    <td class="summer">结果</td>
+                    <td class="none"></td>
+                    <td class="none"></td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>橘子的种子</td>
+                    <td class="spring">开花</td>
+                    <td class="summer">结果</td>
+                    <td class="none"></td>
+                    <td class="none"></td>
+                    <td>140</td>
+                </tr>
+                <tr>
+                    <td>葡萄的种子</td>
+                    <td class="none"></td>
+                    <td class="summer">开花</td>
+                    <td class="autumn">结果</td>
+                    <td class="none"></td>
+                    <td>160</td>
+                </tr>
+                <tr>
+                    <td>香蕉的种子</td>
+                    <td class="spring">开花</td>
+                    <td class="summer">结果</td>
+                    <td class="none"></td>
+                    <td class="none"></td>
+                    <td>280</td>
+                </tr>
+                <tr>
+                    <td>苹果的种子</td>
+                    <td class="none"></td>
+                    <td class="summer">开花</td>
+                    <td class="autumn">结果</td>
+                    <td class="none"></td>
+                    <td>140</td>
+                </tr>
+                <tr>
+                    <td>肥料</td>
+                    <td colspan="4"></td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table>
     <h3>松土</h3>
     <p>第一章的最开始，牧场里有两片田地。先从这些田地开始用锄头松土吧。</p>
     <h3>播撒农作物的种子</h3>

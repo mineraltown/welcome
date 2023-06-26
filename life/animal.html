@@ -7,6 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
     <link rel="stylesheet" href="/css/iframe.css">
     <title>饲养动物</title>
+    <style>
+        .td_left {
+            text-align: left;
+        }
+        .flex_center {
+            min-width: 5.5em;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .flex_center img{
+            margin-left: 5px;
+        }
+
+        @media screen and (min-width:801px) {
+            .flex_center {
+                margin-left: 1em;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +73,109 @@
             将受精蛋放入孵化箱中，或者让母鸡孵化便能得到小鸡。</p>
     </div>
 
+    <h2>订购动物</h2>
 
+    <table>
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>价格</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><div class="flex_center">普通哞 <img src="men-line.svg" alt="♂"></div></td>
+                <td>2,500</td>
+                <td class="td_left">牛宝宝。可以给母牛配种。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">普通哞 <img src="women-line.svg" alt="♀"></div></td>
+                <td>5,000</td>
+                <td class="td_left">牛宝宝。会产出普通奶。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">棕哞 <img src="men-line.svg" alt="♂"></div></td>
+                <td>10,000</td>
+                <td class="td_left">牛宝宝。可以给母牛配种。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">棕哞 <img src="women-line.svg" alt="♀"></div></td>
+                <td>20,000</td>
+                <td class="td_left">牛宝宝。会产出棕奶。棕奶适合做黄油。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">大理石哞 <img src="men-line.svg" alt="♂"></div></td>
+                <td>10,000</td>
+                <td class="td_left">牛宝宝。可以给母牛配种。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">大理石哞 <img src="women-line.svg" alt="♀"></div></td>
+                <td>20,000</td>
+                <td class="td_left">牛宝宝。会产出大理石奶。大理石奶适合做芝士。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">星哞 <img src="men-line.svg" alt="♂"></div></td>
+                <td>25,000</td>
+                <td class="td_left">牛宝宝。可以给母牛配种。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">星哞 <img src="women-line.svg" alt="♀"></div></td>
+                <td>50,000</td>
+                <td class="td_left">牛宝宝。会产出高级星奶。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">绵羊 <img src="men-line.svg" alt="♂"></div></td>
+                <td>3,000</td>
+                <td class="td_left">绵羊宝宝。可以采集到羊毛，和母绵羊一起养，木绵羊可能会自然而然地怀孕。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">绵羊 <img src="women-line.svg" alt="♀"></div></td>
+                <td>3,000</td>
+                <td class="td_left">绵羊宝宝。可以采集到羊毛。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">鸡 <img src="men-line.svg" alt="♂"></div></td>
+                <td>500</td>
+                <td class="td_left">成年鸡。和母鸡一起养，可能会下受精蛋。</td>
+            </tr>
+            <tr>
+                <td><div class="flex_center">鸡 <img src="women-line.svg" alt="♀"></div></td>
+                <td>1,000</td>
+                <td class="td_left">成年鸡。会下蛋。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>动物宝宝在几天后会长大。</p>
+
+    <h2>订购饲料</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>价格</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>鸡饲料</td>
+                <td>100</td>
+                <td class="td_left">只要放在鸡窝的饲料区，鸡都会来啄食</td>
+            </tr>
+            <tr>
+                <td>动物用零食</td>
+                <td>50</td>
+                <td class="td_left">动物小屋里的动物零食。喂给动物，能令他们成长得更好。</td>
+            </tr>
+            <tr>
+                <td>草料</td>
+                <td>20</td>
+                <td class="td_left">动物小屋里的动物主食，绿油油的，气味清香。</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 
