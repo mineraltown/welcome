@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
     <link rel="stylesheet" href="/css/iframe.css">
-    <title>农活</title>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.prod.js"></script>
+    <script src="./farm/farm.js"></script>
+    <title>农作</title>
     <style>
         table {
             font-size: 0.9em;
@@ -55,6 +57,10 @@
             tbody td:nth-child(even) {
                 border: solid 1px #eee;
             }
+
+            tbody th {
+                border: none;
+            }
         }
 
         .spring {
@@ -79,23 +85,424 @@
     </style>
 </head>
 
-<body>
-    <h1>农活</h1>
+<body id="app">
+    <h1>农作</h1>
     <p>在牧场里耕种田地以及饲养动物能够收获农作物与酪乳品。<br>
         它们除了能用来出售赚钱外，还可以用来制作菜肴，或作为礼物送给其他居民。</p>
     <h2>种植农作物</h2>
     <p>在田地里种下农作物的种子并浇水的话，农作物便会成熟并能够被收获。<br>
-        但是，如果一段时间内忘记浇水的话，农作物便会枯萎，请多加注意。<br>
-        此外，所有农作物都有相应的培育季节，错过培育季节的话，未成熟的农作物便会枯萎。<br>
+        但是，<b>如果一段时间内忘记浇水的话，农作物便会枯萎</b>，请多加注意。<br>
+        此外，所有农作物都有相应的培育季节，<b>错过培育季节的话，未成熟的农作物便会枯萎</b>。<br>
         收获的农作物能够用来出售换取金钱，也可以当成材料用来制作菜肴。</p>
-    <h3>购买种子</h3>
-
+    <h3>松土</h3>
+    <p>第一章的最开始，牧场里有两片田地。先从这些田地开始用锄头松土吧。</p>
+    <h3>播撒农作物的种子</h3>
+    <p>在种子的说明中查看培育季节，并把种子种在松完土的田里吧。<br>
+        每天用洒水壶浇水，农作物便会成长。<br>
+        早晚浇水，多多给予农作物营养吧。持续施肥的话，能提升农作物的品质。</p>
+    <div class="note">
+        <h3>下雨天不需要浇水</h3>
+        <p>天气为雨或者大雨时不需要浇水，但下雪天依旧需要浇水，请多多注意。</p>
+    </div>
+    <h3>果树的种植方法</h3>
+    <p>果树只需种在松好的土壤里就能生长，不需要浇水。<br>
+        成长到特定的季节开花后，在下一个季节便会结出果实。<br>
+        但是，种植果树时需要隔开至少一个格子。</p>
+    <h3>改良品种</h3>
+    <p>在第二章以后，满足某个条件便能进行品种改良。<br>
+        品种改良过后的种子，在部分土壤中可能无法生长。<br>
+        阅读种子的说明，确认种子能够生长的土壤吧。
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="9">作物种子合成</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th></th>
+            <th>番茄</th>
+            <th>西瓜</th>
+            <th>草莓</th>
+            <th>蜜瓜</th>
+            <th>芜菁</th>
+            <th>土豆</th>
+            <th>胡萝卜</th>
+            <th>甘薯</th>
+        </tr>
+        <tr>
+            <th>番茄</th>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>西瓜</th>
+            <td>西茄</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>草莓</th>
+            <td>莓茄</td>
+            <td>西莓</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>蜜瓜</th>
+            <td>蜜茄</td>
+            <td>西蜜瓜</td>
+            <td>蜜莓</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>芜菁</th>
+            <td>茄菁</td>
+            <td>西菁</td>
+            <td>芜茄</td>
+            <td>蜜菁</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>土豆</th>
+            <td>土茄</td>
+            <td>土西瓜</td>
+            <td>土莓</td>
+            <td>土蜜瓜</td>
+            <td>土菁</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>胡萝卜</th>
+            <td>胡茄</td>
+            <td>萝瓜</td>
+            <td>胡莓</td>
+            <td>胡蜜</td>
+            <td>萝菁</td>
+            <td>土萝卜</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>甘薯</th>
+            <td>甘茄</td>
+            <td>甘西瓜</td>
+            <td>草薯</td>
+            <td>甘蜜瓜</td>
+            <td>芜薯</td>
+            <td>土薯</td>
+            <td>胡薯</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="6">果树种子合成</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>西茄</th>
+                <th>桃子</th>
+                <th>橘子</th>
+                <th>葡萄</th>
+                <th>香蕉</th>
+                <th>苹果</th>
+            </tr>
+            <tr>
+                <th>桃子</th>
+                <td>-</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>橘子</th>
+                <td>桃橘</td>
+                <td>-</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>葡萄</th>
+                <td>葡桃</td>
+                <td>橘葡</td>
+                <td>-</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>香蕉</th>
+                <td>桃蕉</td>
+                <td>橘蕉</td>
+                <td>葡蕉</td>
+                <td>-</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>苹果</th>
+                <td>苹桃</td>
+                <td>橘子蕉</td>
+                <td>苹萄</td>
+                <td>苹蕉</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">珍品种子合成</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>名称</th>
+                <th>材料一</th>
+                <th>材料二</th>
+            </tr>
+            <tr>
+                <th>珍种1</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种2</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种3</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种4</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种5</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种6</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种7</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种8</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种9</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种10</th>
+                <td colspan="2">不存在</td>
+            </tr>
+            <tr>
+                <th>珍种11</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种12</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种13</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种14</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种15</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种16</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种17</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种18</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种19</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种20</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种21</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种22</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种23</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种24</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种25</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种26</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种27</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种28</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种29</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种30</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种31</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种32</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种33</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种34</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种35</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种36</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种37</th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>珍种38</th>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <ol>
+        <li><b>珍种1-25</b> 有多种组合方法，可以参考「 <a href="./farm_BOM.html">珍品种子完全合成表</a>」</li>
+        <li>制作 <b>珍种24</b> 需要在 PM6:00 ~ AM5:59 进行</li>
+        <li>制作 <b>珍种25</b> 需要在 AM6:00 ~ PM5:59 进行</li>
+    </ol>
+    <h2>作物一览</h2>
+    <p>
+        <b style="margin-right: 2em;">按季节筛选</b>
+        <input type="checkbox" v-model="checkbox.Tulips">郁金香
+        <input type="checkbox" v-model="checkbox.Pepper">胡椒
+        <input type="checkbox" v-model="checkbox.Amber">琥珀
+        <input type="checkbox" v-model="checkbox.Indigo">靛蓝
+    </p>
         <table>
             <thead>
                 <tr>
                     <th rowspan="2">名称</th>
                     <th colspan="4">季节</th>
-                    <th rowspan="2">价格</th>
+                    <th rowspan="2">价格<br>（S级）</th>
+                    <th rowspan="2">生长周期</th>
                 </tr>
                 <tr>
                     <th>郁金香</th>
@@ -105,134 +512,62 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>番茄的种子</td>
-                    <td class="spring">○</td>
-                    <td class="summer">○</td>
-                    <td class="autumn">○</td>
-                    <td class="none">×</td>
-                    <td>30</td>
-                </tr>
-                <tr>
-                    <td>西瓜的种子</td>
-                    <td class="spring">○</td>
-                    <td class="summer">○</td>
-                    <td class="none">×</td>
-                    <td class="none">×</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>草莓的种子</td>
-                    <td class="spring">○</td>
-                    <td class="none">×</td>
-                    <td class="autumn">○</td>
-                    <td class="winter">○</td>
-                    <td>30</td>
-                </tr>
-                <tr>
-                    <td>蜜瓜的种子</td>
-                    <td class="none">×</td>
-                    <td class="summer">○</td>
-                    <td class="autumn">○</td>
-                    <td class="none">×</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>芜菁的种子</td>
-                    <td class="none">×</td>
-                    <td class="summer">○</td>
-                    <td class="autumn">○</td>
-                    <td class="winter">○</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>土豆的种子</td>
-                    <td class="spring">○</td>
-                    <td class="none">×</td>
-                    <td class="none">×</td>
-                    <td class="winter">○</td>
-                    <td>40</td>
-                </tr>
-                <tr>
-                    <td>胡萝卜的种子</td>
-                    <td class="none">×</td>
-                    <td class="none">×</td>
-                    <td class="autumn">○</td>
-                    <td class="winter">○</td>
-                    <td>30</td>
-                </tr>
-                <tr>
-                    <td>甘薯的种子</td>
-                    <td class="none">×</td>
-                    <td class="none">×</td>
-                    <td class="autumn">○</td>
-                    <td class="none">×</td>
-                    <td>40</td>
-                </tr>
-                <tr>
-                    <td>桃子的种子</td>
-                    <td class="spring">开花</td>
-                    <td class="summer">结果</td>
-                    <td class="none"></td>
-                    <td class="none"></td>
-                    <td>180</td>
-                </tr>
-                <tr>
-                    <td>橘子的种子</td>
-                    <td class="spring">开花</td>
-                    <td class="summer">结果</td>
-                    <td class="none"></td>
-                    <td class="none"></td>
-                    <td>140</td>
-                </tr>
-                <tr>
-                    <td>葡萄的种子</td>
-                    <td class="none"></td>
-                    <td class="summer">开花</td>
-                    <td class="autumn">结果</td>
-                    <td class="none"></td>
-                    <td>160</td>
-                </tr>
-                <tr>
-                    <td>香蕉的种子</td>
-                    <td class="spring">开花</td>
-                    <td class="summer">结果</td>
-                    <td class="none"></td>
-                    <td class="none"></td>
-                    <td>280</td>
-                </tr>
-                <tr>
-                    <td>苹果的种子</td>
-                    <td class="none"></td>
-                    <td class="summer">开花</td>
-                    <td class="autumn">结果</td>
-                    <td class="none"></td>
-                    <td>140</td>
-                </tr>
-                <tr>
-                    <td>肥料</td>
-                    <td colspan="4"></td>
-                    <td>20</td>
-                </tr>
+                <template v-for="i,n in [normal,blue,synthesize,,rare,tree,tree_synthesize,tree_rare]">
+                    <tr v-if="n=='0'"><th colspan="7">初始作物</th></tr>
+                    <tr v-if="n=='1'"><th colspan="7">蓝色作物</th></tr>
+                    <tr v-if="n=='2'"><th colspan="7">变异作物</th></tr>
+                    <tr v-if="n=='3'"><th colspan="7">珍品作物</th></tr>
+                    <tr v-if="n=='4'"><th colspan="7">初始果树</th></tr>
+                    <tr v-if="n=='5'"><th colspan="7">变异果树</th></tr>
+                    <tr v-if="n=='6'"><th colspan="7">珍品果树</th></tr>
+                    <template v-for="x,y in i">
+                        <tr v-if="season(x)">
+                            <td v-text="y"></td>
+                            <td class="spring" v-if="x.Tulips">◯</td>
+                            <td class="none" v-else>×</td>
+                            <td class="summer" v-if="x.Pepper">◯</td>
+                            <td class="none" v-else>×</td>
+                            <td class="autumn" v-if="x.Amber">◯</td>
+                            <td class="none" v-else>×</td>
+                            <td class="winter" v-if="x.Indigo">◯</td>
+                            <td class="none" v-else>×</td>
+                            <td v-if="x.Price != 0" v-text="x.Price"></td>
+                            <td v-else></td>
+                            <td v-text="x.Days"></td>
+                        </tr>
+                    </template>
+                </template>
             </tbody>
         </table>
-    <h3>松土</h3>
-    <p>第一章的最开始，牧场里有两片田地。先从这些田地开始用锄头松土吧。</p>
-    <h3>播撒农作物的种子</h3>
-    <p>在种子的说明中查看培育季节，并把种子种在松完土的田里吧。每天用洒水壶浇水，农作物便会成长。早晚浇水，多多给予农作物营养吧。持续施肥的话，能提升农作物的品质。</p>
-    <div class="note">
-        <h3>下雨天不需要浇水</h3>
-        <p>天气为雨或者大雨时不需要浇水，但下雪天依旧需要浇水，请多多注意。</p>
-    </div>
-    <h3>改良品种</h3>
-    <p>在第二章以后，满足某个条件便能进行品种改良。<br>
-        品种改良过后的种子，在部分土壤中可能无法生长。<br>
-        阅读种子的说明，确认种子能够生长的土壤吧。
-    </p>
-    <h2>果树的种植方法</h2>
-    <p>果树只需种在松好的土壤里就能生长，不需要浇水。<br>
-        成长到特定的季节开花后，在下一个季节便会结出果实。<br>
-        但是，种植果树时需要隔开至少一个格子。</p>
 </body>
+<script>
+    const { createApp } = Vue
 
+    createApp({
+        data() {
+            return {
+                "checkbox": {
+                    "Tulips": false,
+                    "Pepper": false,
+                    "Amber": false,
+                    "Indigo": false,
+                },
+                "normal": normal,
+                "synthesize": synthesize
+            }
+        },
+        methods: {
+            season(e) {
+                for (i in this.checkbox) {
+                    if (this.checkbox[i]) {
+                        if (!e[i]) {
+                            return false
+                        }
+                    }
+                }
+                return true
+            }
+        },
+    }).mount("#app")
+</script>
 </html>
