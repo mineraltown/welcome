@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <link rel="stylesheet" href="/css/iframe.css">
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.prod.js"></script>
+    <script src="./farm/seed.js"></script>
+    <title>改良品种</title>
+    <style>
+        .f {
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        .f2 {
+            min-width: 50%;
+        }
+        .b {
+            font-weight: bold;
+        }
+
+        .s {
+            font-size: 0.9em;
+        }
+        table {
+            font-size: 0.9em;
+        }
+        @media only screen and (max-width: 800px) {
+            th,
+            td {
+                height: 1.5em;
+                line-height: 1.5em;
+                padding: 3px;
+                text-align: center;
+                border: solid 1px #fff;
+            }
+
+            .mobile {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 801px) {
+            thead {
+                background-color: #666;
+                color: #fff;
+            }
+
+            th,
+            td {
+                height: 1.7em;
+                line-height: 1.7em;
+                padding: 5px 10px;
+                text-align: center;
+            }
+
+            tbody tr:nth-child(odd) {
+                background-color: #eee;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #fff;
+            }
+
+            tbody td:nth-child(odd) {
+                border: solid 1px #fff;
+            }
+
+            tbody td:nth-child(even) {
+                border: solid 1px #eee;
+            }
+
+            tbody th {
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body id="app">
+    <h1>改良品种</h1>
+    <p>在第二章，「光光」出现以后，便能进行品种改良。<br>
+        品种改良过后的种子，在部分土壤中可能无法生长。<br>
+        阅读种子的说明，确认种子能够生长的土壤吧。
+    </p>
+    <p>※ 需要种植一定数量的作物后，「光光」出现的事件才会触发。<br>
+        ※ 和「光光」的好感度足够高才会帮忙改良种子，可以一直和它对话提高好感！
+    </p>
+    <div class="key">
+        <ul>
+            <li>即使把S级的作物/种子组合在一起，新创造的作物种子也是B级。</li>
+            <li>作物的改良有概率失败，如果失败，它就会变成原始材料其中之一。</li>
+            <li>作物的品质会影响成功率，作物品质越高，改良成功率就越高。</li>
+        </ul>
+    </div>
+    <h2>普通的改良</h2>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="9">基础作物</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th></th>
+            <th>番茄</th>
+            <th>西瓜</th>
+            <th>草莓</th>
+            <th>蜜瓜</th>
+            <th>芜菁</th>
+            <th>土豆</th>
+            <th>胡萝卜</th>
+            <th>甘薯</th>
+        </tr>
+        <tr>
+            <th>番茄</th>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>西瓜</th>
+            <td>西茄</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>草莓</th>
+            <td>莓茄</td>
+            <td>西莓</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>蜜瓜</th>
+            <td>蜜茄</td>
+            <td>西蜜瓜</td>
+            <td>蜜莓</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>芜菁</th>
+            <td>茄菁</td>
+            <td>西菁</td>
+            <td>芜茄</td>
+            <td>蜜菁</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>土豆</th>
+            <td>土茄</td>
+            <td>土西瓜</td>
+            <td>土莓</td>
+            <td>土蜜瓜</td>
+            <td>土菁</td>
+            <td>-</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>胡萝卜</th>
+            <td>胡茄</td>
+            <td>萝瓜</td>
+            <td>胡莓</td>
+            <td>胡蜜</td>
+            <td>萝菁</td>
+            <td>土萝卜</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>甘薯</th>
+            <td>甘茄</td>
+            <td>甘西瓜</td>
+            <td>草薯</td>
+            <td>甘蜜瓜</td>
+            <td>芜薯</td>
+            <td>土薯</td>
+            <td>胡薯</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="6">基础果树</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>西茄</th>
+                <th>桃子</th>
+                <th>橘子</th>
+                <th>葡萄</th>
+                <th>香蕉</th>
+                <th>苹果</th>
+            </tr>
+            <tr>
+                <th>桃子</th>
+                <td>-</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>橘子</th>
+                <td>桃橘</td>
+                <td>-</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>葡萄</th>
+                <td>葡桃</td>
+                <td>橘葡</td>
+                <td>-</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>香蕉</th>
+                <td>桃蕉</td>
+                <td>橘蕉</td>
+                <td>葡蕉</td>
+                <td>-</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>苹果</th>
+                <td>苹桃</td>
+                <td>苹橘</td>
+                <td>苹萄</td>
+                <td>苹蕉</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h3>特殊的改良</h3>
+    <ul>
+        <li><b>诡蓝</b> 变成蓝色作物的种子 </li>
+        <li><b>幸福灯</b> 可以在任何季节种植 ◊</li>
+        <li><b>不知土</b> 可以在任何土壤上生长 ⬧</li>
+        <li><b>高种花</b> 创造S级品质的种子</li>
+    </ul>
+    <div class="f">
+        <div class="f2">
+        <h2>珍种</h2>
+        <p>对改良后的作物种子再进行改良，可以得到珍种。</p>
+        <p class="note" style="font-size: 0.9em;">
+            <b>珍种24</b> 需要在 PM6:00 ~ AM5:59 进行改良<br>
+            <b>珍种25</b> 需要在 AM6:00 ~ PM5:59 进行改良<br>
+            不存在 <b>珍种10</b>
+        </p>
+        <ul>
+            <template v-for="item,n in seed">
+            <li class="b">{{n}}</li>
+            <ul>
+                <template v-for="x in item">
+                <li class="s">{{x[0]}} + {{x[1]}}</li>
+                </template>
+            </ul>
+            </template>
+        </ul>
+        </div>
+        <div class="f2">
+            <h2>珍树</h2>
+            <p>对改良后的的果树种子再进行改良，可以得到珍树。</p>
+            <ul>
+                <template v-for="item,n in tree">
+                <li class="b">{{n}}</li>
+                <ul>
+                    <template v-for="x in item">
+                    <li class="s">{{x[0]}} + {{x[1]}}</li>
+                    </template>
+                </ul>
+                </template>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script>
+    const { createApp } = Vue
+
+    createApp({
+        data() {
+            return {
+                "seed": seed,
+                "tree": tree,
+            }
+        },
+        methods: {},
+    }).mount("#app")
+</script>
+
+</html>
